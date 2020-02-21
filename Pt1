@@ -1,0 +1,22 @@
+// 1. Convert Celsius to Fahrenheit
+function convertToF(celsius) {
+  return celsius * (9/5) + 32;
+}
+console.log(convertToF(-30));
+
+// 2. Reverse a String
+function reverseString(str) {
+  let newString= str.split("").reverse().join("");
+  return newString;
+}
+reverseString("hello");
+
+// 3. Factorialize a Number
+function factorialize(num) {
+  let factoredNum = 1;
+  for (let i = 1; i <= num; i++) {
+    factoredNum *= i;
+  }
+  return factoredNum;
+}
+console.log(factorialize(5));

@@ -20,3 +20,8 @@ function factorialize(num) {
   return factoredNum;
 }
 console.log(factorialize(5));
+
+// 4. Find the Longest Word in a String
+function findLongestWordLength(str) {
+  return Math.max(...str.split(" ").map(word => word.length));
+}

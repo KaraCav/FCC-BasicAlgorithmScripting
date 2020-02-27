@@ -41,3 +41,19 @@ function largestOfFour(arr) {
   return largestOuterArray;
 }
 largestOfFour([[4, 5, 1, 3], [13, 27, 18, 26], [32, 35, 37, 39], [-72, -3, -17, -10]]);
+
+// 6.  Confirm the Ending
+function confirmEnding(str, target) {
+  let myArr = str.split('');
+  let isEqual;
+  let endOfString = myArr.splice(myArr.length-target.length);
+  if(endOfString.join() == target.split("")){
+    return true;
+  }
+  else {
+    return false;
+  }
+}
+confirmEnding("Bastian", "n");
+confirmEnding("Bastian", "tian");
+

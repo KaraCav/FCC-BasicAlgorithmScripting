@@ -12,23 +12,20 @@ booWho(null);
 
 // 12. Title Case a Sentence
 //Return the provided string with the first letter of each word capitalized. Make sure the rest of the word is in lower case.
-// FIRST ATTEMPT
 function titleCase(str) {
-  let lowerString = str.toLowerCase();
-  let newString = "";
-  console.log(lowerString.length);
-  for(let i = 0; i < lowerString.length; i++) {
-    if(lowerString[i] == " ") {
-      let upperCaseLetter = lowerString[i + 1].toUpperCase();
-    newString = newString + " " + upperCaseLetter;
+    let lowerString = str.toLowerCase().split(' ');
+    let returnString = "";
+    for(let i = 0; i < lowerString.length; i++) {    
+        let upperLetter = lowerString[i].slice(0,1);
+        returnString = returnString + upperLetter.toUpperCase();
+        if(lowerString[i].length > 1) {
+            let otherLetters = lowerString[i].slice(1, lowerString[i].length)
+        returnString = returnString + otherLetters + " ";
+      }
+      else {
+          returnString = returnString + " "
+        }
     }
-    else {
-      newString = newString + lowerString[i];
-    }
-    console.log(newString);
-  }
-console.log(typeof(newString));
-  return str;
+    return returnString.slice(0, returnString.length-1);
 }
-
-titleCase("I'm a little tea pot");
+titleCase("I'M a liTtle tEa pOt");

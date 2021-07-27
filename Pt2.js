@@ -29,3 +29,19 @@ function titleCase(str) {
     return returnString.slice(0, returnString.length-1);
 }
 titleCase("I'M a liTtle tEa pOt");
+
+// 13. Use Recursion to Create a Countdown
+// The function should use recursion to return an array containing the integers n through 1 based on the n parameter. 
+// If the function is called with a number less than 1, the function should return an empty array. 
+function countdown(n){
+  if (n < 1) {
+    return [];
+  } else {
+    const countArray = countdown(n - 1);
+    countArray.unshift(n);
+    return countArray;
+  }
+}
+
+// 14. Use Recursion to Create a Range of Numbers
+

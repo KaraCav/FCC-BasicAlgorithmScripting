@@ -44,4 +44,12 @@ function countdown(n){
 }
 
 // 14. Use Recursion to Create a Range of Numbers
-
+function rangeOfNumbers(startNum, endNum) { 
+  if (startNum == endNum) {
+    return [startNum];
+  } else {
+    let numArr = rangeOfNumbers(startNum, endNum - 1);
+    numArr.push(endNum);
+    return numArr;
+  }
+}

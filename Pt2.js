@@ -56,7 +56,7 @@ function rangeOfNumbers(startNum, endNum) {
 
 // 15. Slice and Splice- You are given two arrays and an index. Copy each element of the first array into the second array, in order, starting 
 // at index n of the second array. Return the resulting array. The input arrays should not change.
-// 1st Answer:
+// First Answer:
 function frankenSplice(arr1, arr2, n) {
   let arr2Start = arr2.slice(0, n);
   let arr2End = arr2.slice(n);
@@ -78,3 +78,34 @@ function frankenSplice(arr1, arr2, n) {
   }
   return newArray;
 }
+
+// 16. Falsy Bouncer- Remove all falsy values from an array (in JS, these are false, null, 0, "", undefined, and NaN)
+// First Answer:
+function bouncer(arr) {
+  let localArr = [];
+  for (let i = 0; i < arr.length; i++) {
+    let x = arr[i];
+    if (x == null || x == 0 || x == undefined || x != x || x == false) {   // x != x checks for NaN
+      console.log(localArr)
+    }
+    else {
+      localArr.push(x);
+    }
+  }
+  return localArr;
+}
+// Second Answer: 
+function bouncer(arr) {
+  let newArray = [];
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i]) {
+      newArray.push(arr[i]);
+    }
+  }
+  return newArray;
+}
+// Suggested Answer:
+function bouncer(arr) {
+  return arr.filter(Boolean); 
+}
+// Explanation: The Array.prototype.filter method expects a function that returns a Boolean value which takes a single argument 

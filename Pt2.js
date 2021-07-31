@@ -53,3 +53,28 @@ function rangeOfNumbers(startNum, endNum) {
     return numArr;
   }
 }
+
+// 15. Slice and Splice- You are given two arrays and an index. Copy each element of the first array into the second array, in order, starting 
+// at index n of the second array. Return the resulting array. The input arrays should not change.
+// 1st Answer:
+function frankenSplice(arr1, arr2, n) {
+  let arr2Start = arr2.slice(0, n);
+  let arr2End = arr2.slice(n);
+  
+  for(let i = 0; i < arr1.length; i++) {
+    arr2Start.push(arr1[i]);
+  }
+  for(let i = 0; i < arr2End.length; i++){
+    arr2Start.push(arr2End[i])
+  }
+  return arr2Start;
+}
+// Second Answer:
+function frankenSplice(arr1, arr2, n) {
+  let newArray = arr2.slice();
+  for (let i = 0; i < arr1.length; i++) {
+    newArray.splice(n, 0, arr1[i]);
+    n++;
+  }
+  return newArray;
+}

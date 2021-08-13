@@ -33,3 +33,24 @@ function House(numBedrooms) {
 }
 let myHouse = new House(4);
 myHouse instanceof House; // true
+
+// 6. Understand Own Properties- name and numLegs are called 'own properties', 
+// because they are defined directly on the instance object
+function Bird(name) {
+  this.name = name;
+  this.numLegs = 2;
+}
+
+let canary = new Bird("Tweety");
+let ownProps = [];
+for(let prop in canary) {
+  if(canary.hasOwnProperty(prop)) {
+    ownProps.push(prop);
+  }
+}
+
+// 7. Use Prototype Properties to Reduce Duplicate Code
+function Dog(name) {
+  this.name = name;
+}
+Dog.prototype.numLegs = 4;

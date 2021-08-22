@@ -86,3 +86,32 @@ function joinDogFraternity(candidate) {
     return false;
   }
 }
+
+// 10. Change the Prototype to a New Object
+// Instead of adding new properties to a prototype individually, it's more efficient  
+// to set the prototype to a new object that already contains the properties.
+function Dog(name) {
+  this.name = name;
+}
+
+Dog.prototype = {
+  numLegs : 4,
+  eat : function() {
+    console.log("dog eats")
+  },
+  describe: function() {
+    console.log("dog is brown")
+  }
+};
+
+// 11. Understand Where an Object’s Prototype Comes From
+Dog.prototype.isPrototypeOf(beagle); // beagle is of prototype Dog
+// Dog is the supertype for beagle, while beagle is the subtype
+
+// 12. Create Animal superset
+Animal.prototype = {
+  constructor: Animal,
+  eat: function() {
+    console.log("nom nom nom");
+  }
+};

@@ -125,7 +125,7 @@ function getIndexToIns(arr, num) {
   return arr.length;
 }
 
-// 18. Mutations- Return true if the string in the first element of the array contains all of the letters of the string in the second element of the array.
+// 18. Mutations- Return true if the string in the first element of the array contains all the letters of the string in the second element of the array.
 function mutation(arr) {
   let arr1 = arr[0].toLowerCase();
   let arr2 = arr[1].toLowerCase();
@@ -137,3 +137,15 @@ function mutation(arr) {
   }
   return true;
 }
+
+// 19. Chunky Monkey- Write a function that splits an array into groups the length of size and returns them as a two-dimensional array.
+function chunkArrayInGroups(arr, size) {
+  let finalArr = [];
+  for(let i = 0; i < arr.length; i+= size) {
+    finalArr.push(arr.slice(i, i + size));
+    console.log(finalArr);
+  }
+  return finalArr;;
+}
+
+chunkArrayInGroups(["a", "b", "c", "d", "e"], 2);

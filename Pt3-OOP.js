@@ -115,3 +115,69 @@ Animal.prototype = {
     console.log("nom nom nom");
   }
 };
+
+// 13. Inherit Behaviors from a Supertype
+// Starting with this code:
+function Animal() { }
+Animal.prototype.eat = function() {
+  console.log("nom nom nom");
+};
+// Step 1- Make an instance of the Supertype
+let animal = new Animal();
+// this way of creating a supertype has disadvantages, so instead we'll use:
+let animal = Object.create(Animal.prototype);
+// Use Object.create to make two instances of Animal named duck and beagle
+function Animal() { }
+
+Animal.prototype = {
+  constructor: Animal,
+  eat: function() {
+    console.log("nom nom nom");
+  }
+};
+
+let duck = Object.create(Animal.prototype);
+let beagle = Object.create(Animal.prototype);
+console.log(duck.eat())
+console.log(beagle instanceof Animal);
+
+// Step 2- Set the Child's Prototype to an Instance of the Parent
+Dog.prototype = Object.create(Animal.prototype);
+let beagle = new Dog();
+
+// Number 14- Reset an Inherited Constructor Property
+// Instantiate an actual instance of an Object like this:
+let duck = new Bird();
+let beagle = new Dog();
+// Then change the prototype:
+Bird.prototype.constructor = Bird;
+Dog.prototype.constructor = Dog;
+
+// 15. Add Methods After Inheritance
+function Animal() { }
+Animal.prototype.eat = function() { console.log("nom nom nom"); };
+
+function Dog() { }
+
+Dog.prototype = Object.create(Animal.prototype);
+Dog.prototype.constructor = Dog;
+Dog.prototype.bark = function() { console.log("Woof!"); };
+
+let beagle = new Dog();
+
+// Number 16. Use a Mixin to Add Common Behavior Between Unrelated Objects
+// Inheritance isn't great for unrelated objects like Bird and Airplane- use a mixin instead
+let plane = {
+  model: "777",
+  numPassengers: 524
+};
+
+flyMixin(plane); // this adds the functionality of the flyMixin, to create plane.fly()
+// Create a glide mixin and give the functionality to both birds and boats:
+let glideMixin = function(obj) {
+  obj.glide = function() {
+    console.log("Look Ma, I'm gliding!")
+  }
+}
+glideMixin(bird);
+glideMixin(boat);

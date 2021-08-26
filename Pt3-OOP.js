@@ -165,7 +165,7 @@ Dog.prototype.bark = function() { console.log("Woof!"); };
 
 let beagle = new Dog();
 
-// Number 16. Use a Mixin to Add Common Behavior Between Unrelated Objects
+// 16. Use a Mixin to Add Common Behavior Between Unrelated Objects
 // Inheritance isn't great for unrelated objects like Bird and Airplane- use a mixin instead
 let plane = {
   model: "777",
@@ -181,3 +181,33 @@ let glideMixin = function(obj) {
 }
 glideMixin(bird);
 glideMixin(boat);
+
+// 17. Use Closure to Protect Properties Within an Object
+function Bird() {
+  let weight = 15;
+
+  this.getWeight = function() {
+    return weight;
+  }
+}
+
+// 18. Understand the Immediately Invoked Function Expression (IIFE)
+(function() {
+  console.log("A cozy nest is ready");
+})();
+
+// 19. Create a Module with Mixins
+let motionModule = (function () {
+  return {
+    glideMixin: function(obj) {
+      obj.glide = function() {
+        console.log("Gliding on the water");
+      };
+    },
+    flyMixin: function(obj) {
+      obj.fly = function() {
+        console.log("Flying, wooosh!");
+      };
+    }
+  }
+})();

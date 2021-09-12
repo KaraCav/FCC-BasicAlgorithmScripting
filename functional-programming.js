@@ -31,7 +31,7 @@ const getTea = (prepareTea, numOfCups) => {
 const tea4GreenTeamFCC = getTea(prepareGreenTea, 27);
 const tea4BlackTeamFCC = getTea(prepareBlackTea, 13);
 
-// 3.Understand the Hazards of Using Imperative Code- Make changes to the Window object to add and remove tabs
+// 3. Understand the Hazards of Using Imperative Code- Make changes to the Window object to add and remove tabs
 var Window = function(tabs) {
   this.tabs = tabs; // record of the array in the object
 };
@@ -60,3 +60,9 @@ var finalTabs = socialWindow
   .join(videoWindow.tabClose(2)) // Close 3rd tab in window and join
   .join(workWindow.tabClose(1).tabOpen());
 console.log("final", finalTabs.tabs);
+
+// 4. Avoid Mutations/ Side Effects- return a global variable with a fixed value increased by 1
+var fixedValue = 4;
+function incrementer () {
+  return fixedValue + 1;
+}

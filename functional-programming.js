@@ -66,3 +66,25 @@ var fixedValue = 4;
 function incrementer () {
   return fixedValue + 1;
 }
+
+// 5. Refactor Global Variables Out of FunctionsPassed
+var bookList = ["The Hound of the Baskervilles", "On The Electrodynamics of Moving Bodies", "Disquisitiones Arithmeticae"];
+
+function add(arr, bookName) {
+  let newArr = [...arr];
+  newArr.push(bookName);
+  return newArr;
+}
+function remove(arr, bookName) {
+  let newArr = [...arr]; // Copy the bookList array to a new array.
+  if (newArr.indexOf(bookName) >= 0) {
+    newArr.splice(newArr.indexOf(bookName), 1); 
+    return newArr; 
+  }
+}
+
+var newBookList = add(bookList, 'A Brief History of Time');
+var newerBookList = remove(bookList, 'On The Electrodynamics of Moving Bodies');
+var newestBookList = remove(add(bookList, 'A Brief History of Time'), 'On The Electrodynamics of Moving Bodies');
+
+console.log(bookList);

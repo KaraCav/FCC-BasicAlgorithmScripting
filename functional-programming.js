@@ -88,3 +88,9 @@ var newerBookList = remove(bookList, 'On The Electrodynamics of Moving Bodies');
 var newestBookList = remove(add(bookList, 'A Brief History of Time'), 'On The Electrodynamics of Moving Bodies');
 
 console.log(bookList);
+
+// 6. Use the map Method to Extract Data from an Array
+const ratings = watchList.map(movie => ({
+  title: movie["Title"],
+  rating: movie["imdbRating"]
+}))

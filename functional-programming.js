@@ -94,3 +94,10 @@ const ratings = watchList.map(movie => ({
   title: movie["Title"],
   rating: movie["imdbRating"]
 }))
+
+// 7. Implement map on a Prototype- write your own. map method
+Array.prototype.myMap = function(callback) {
+  var newArray = [];
+  this.forEach(item => newArray.push(callback(item)))
+  return newArray;
+};

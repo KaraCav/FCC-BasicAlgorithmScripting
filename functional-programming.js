@@ -101,3 +101,9 @@ Array.prototype.myMap = function(callback) {
   this.forEach(item => newArray.push(callback(item)))
   return newArray;
 };
+
+// 8. Use the filter Method to Extract Data from an Array
+var filteredList = watchList.map(function(movie) {
+    return { title: movie["Title"], rating: movie["imdbRating"] };
+  })
+  .filter(movie => movie.rating >= 8);

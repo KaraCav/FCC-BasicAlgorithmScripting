@@ -140,3 +140,19 @@ function nonMutatingSplice(cities) {
 }
 var inputCities = ["Chicago", "Delhi", "Islamabad", "London", "Berlin"];
 nonMutatingSplice(inputCities);
+
+// 12. Combine Two Arrays Using the concat Method
+function nonMutatingSplice(cities) {
+  return cities.slice(0,3);
+}
+var inputCities = ["Chicago", "Delhi", "Islamabad", "London", "Berlin"];
+nonMutatingSplice(inputCities);
+
+// 13. Add Elements to the End of an Array Using concat Instead of push
+// Functional programming is all about creating and using non-mutating functions
+function nonMutatingPush(original, newItem) {
+  return original.concat(newItem);
+}
+var first = [1, 2, 3];
+var second = [4, 5];
+nonMutatingPush(first, second);

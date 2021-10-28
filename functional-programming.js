@@ -156,3 +156,14 @@ function nonMutatingPush(original, newItem) {
 var first = [1, 2, 3];
 var second = [4, 5];
 nonMutatingPush(first, second);
+
+// 14. Use the reduce Method to Analyze Data- Return the average rating of only Christopher Nolan movies
+function getRating(watchList) {
+  
+let averageRating = watchList
+.filter(movie => movie.Director == "Christopher Nolan")
+.map(movie => Number(movie.imdbRating))
+.reduce((allRatings, thisRating) => allRatings + thisRating);
+  
+return averageRating/ watchList.filter(movie => movie.Director == "Christopher Nolan").length
+}

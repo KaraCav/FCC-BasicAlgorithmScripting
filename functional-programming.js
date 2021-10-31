@@ -167,3 +167,13 @@ let averageRating = watchList
   
 return averageRating/ watchList.filter(movie => movie.Director == "Christopher Nolan").length
 }
+
+// 15. Use Higher-Order Functions to Solve a Complex Problem- return a new array containing the squares of only the positive integers
+const squareList = arr => {
+  return arr
+  .filter(num => num > 0 && num % parseInt(num) === 0)
+  .map(num => Math.pow(num, 2));
+};
+
+const squaredIntegers = squareList([-3, 4.8, 5, 3, -3.2]);
+console.log(squaredIntegers);

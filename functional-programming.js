@@ -192,3 +192,14 @@ function alphabeticalOrder(arr) {
   return arr
 }
 alphabeticalOrder(["a", "d", "d", "c", "a", "z", "g"]);
+
+// 17. Return a Sorted Array Without Changing the Original Array
+const globalArray = [5, 6, 3, 2, 9];
+function nonMutatingSort(arr) {
+  let newArr = [...arr].sort(function(a,b){
+    return a-b;
+  })
+  console.log(newArr)
+  return newArr;
+}
+nonMutatingSort(globalArray);

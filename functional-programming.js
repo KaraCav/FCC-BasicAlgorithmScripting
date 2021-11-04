@@ -203,3 +203,11 @@ function nonMutatingSort(arr) {
   return newArr;
 }
 nonMutatingSort(globalArray);
+
+// 18. Split a String into an Array Using the split Method
+function splitify(str) {
+  let newStr = str.split(/\W/g);
+  console.log(newStr)
+  return newStr;
+}
+splitify("Hello World,I-am code");

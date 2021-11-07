@@ -211,3 +211,17 @@ function splitify(str) {
   return newStr;
 }
 splitify("Hello World,I-am code");
+
+// 19. Combine an Array into a String Using the join Method
+function sentensify(str) {
+  let newStr = str.split(/\W/g);
+  return newStr.join(" ");
+}
+sentensify("May-the-force-be-with-you");
+
+// 20. Apply Functional Programming to Convert Strings to URL Slugs
+function urlSlug(title) {
+  let URLTitle = title.toLowerCase().trim().split(" ");
+  return URLTitle.filter(substring => substring !== "").join("-");
+}
+console.log(urlSlug(" Lord of The  Rings"));

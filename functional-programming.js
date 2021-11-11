@@ -237,3 +237,21 @@ function checkPositive(arr) {
   return arr.some(val => val > 0);
 }
 checkPositive([1, 2, 3, -4, 5]);
+
+// 23. Introduction to Currying and Partial Application
+// The arity of a function is the number of arguments it requires
+// Currying restructures a function so it takes one argument, then returns another function that takes the next argument
+function add(x) {
+  return function(y) {
+   return function(z) {
+     return x + y + z;
+   }
+  }
+}
+
+add(10)(20)(30);
+
+// alternatively, can do:
+function add(x) { 
+  return y => z => x + y + z;
+}

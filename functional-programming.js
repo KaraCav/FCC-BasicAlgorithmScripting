@@ -225,3 +225,15 @@ function urlSlug(title) {
   return URLTitle.filter(substring => substring !== "").join("-");
 }
 console.log(urlSlug(" Lord of The  Rings"));
+
+// 21. Use the every Method to Check that Every Element in an Array Meets a Criteria
+function checkPositive(arr) {
+  return arr.every(val => val > 0);
+}
+checkPositive([1, 2, 3, -4, 5]);
+
+// 22. Use the some Method to Check that Any Elements in an Array Meet a Criteria
+function checkPositive(arr) {
+  return arr.some(val => val > 0);
+}
+checkPositive([1, 2, 3, -4, 5]);
